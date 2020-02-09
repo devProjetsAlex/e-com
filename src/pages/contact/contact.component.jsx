@@ -13,9 +13,9 @@ const ContactPage = () =>(
         Web developper for small business <br/>
         Developpeur de projet Web pour PME
             <br/>
-    <Email href={`mailto:${"dev.projets.alex@gmail.com"}`}>dev.projets.alex@gmail.com</Email>
+     <Email> <a style={{color:"#DAA520"}} href={`mailto:${"dev.projets.alex@gmail.com"}`}>dev.projets.alex@gmail.com</a></Email>
     </ContactText>
-</>
+    </>
    
 )
 
