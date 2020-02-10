@@ -20,14 +20,17 @@ class SignUp extends React.Component{
     }
 
 handleSubmit = async e => {
+    e.preventDefault()
+    const{signUpStart} =this.props
+    const {displayName, email, password, confirmPassword} = this.state
 
-    e.preventDefault();
-    const {signUpStart} = this.props
-    const {email, password} = this.state
-
-    signUpStart(email, password)
-
+      if (password !== confirmPassword) {
+        alert("Password don't match")
+        return;
+    }
+    signUpStart({displayName,email,password})
 }
+
 handleChange = e => {
     const {name, value} = e.target
 
@@ -85,7 +88,7 @@ handleChange = e => {
     }
 }
 const mapDipatchToProps = dispatch => ({    
-    signUpStart: () => dispatch(signUpStart())
+    signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
 })
 
 

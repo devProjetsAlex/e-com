@@ -3,7 +3,7 @@ import React from 'react'
 
 import {createStructuredSelector} from 'reselect'
 
-import {auth} from '../../firebase/firebase.utils'
+
 import {connect} from 'react-redux'
 
 import { HeaderContainer, LogoContainer, OptionContainer, OptionLink} from './header.styles'
