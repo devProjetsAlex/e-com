@@ -17,7 +17,36 @@ export function* getSnapshotFromUserAuth(userAuth) {
     }
     }
 
+export function*signUpStart(){
+    
+    const {displayName, email, password, confirmPassword} = this.state
 
+    if (password !== confirmPassword) {
+        alert("Password don't match")
+        return
+    }
+
+        try{
+            const {user} = await auth.createUserWithEmailAndPassword(
+                email,
+                password
+            )
+
+           await createUserProfileDocument(user, {displayName})
+
+           this.setState({
+            displayName: '',
+            email:'',
+            password:'',
+            confirmPassword:''
+           })
+
+        } catch (error){
+            console.error(error)
+        }
+    }
+
+}
 
 export function* singInWithGoogle() {
 try {
@@ -58,6 +87,9 @@ export function*signOut(){
 export function* onGoogleSignInStart() {
     yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, singInWithGoogle);
   }
+export function*onSignUpStart() {
+    yield takeLatest(UserActionTypes.SIGN_UP_START, signUpStart)
+}
 
 export function*onEmailSignInStart() {
     yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START,signInWithEmail)
@@ -76,7 +108,8 @@ export function*userSagas() {
         call(onGoogleSignInStart), 
         call(onEmailSignInStart),
         call(isUserAuthenticated),
-        call(onSignOutStart)
+        call(onSignOutStart),
+        call(onSignUpStart)
     ])
 }
 
