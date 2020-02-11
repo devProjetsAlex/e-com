@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { connect } from "react-redux";
 
 import CustomButton from '../custom-button/custom-button.component'
@@ -8,53 +8,44 @@ import FormInput from '../form-input/form-input.component'
 import {SignInContainer, SignInTitle, ButtonsBarContainer} from './sign-in.styles'
 import {googleSignInStart, emailSignInStart} from '../../redux/user/user.actions'
 
-class SignIn extends React.Component {
-    constructor(props){
-    super(props)
-
-    this.state ={
-        email:'',
-        password:''
-    }
-}
+const SignIn =(emailSignInStart,googleSignInStart) => {
+    const [userCredentials, setCredentials ] = useState ({email:'', password:'' })
+    const {email, password} = userCredentials
 
 
-handleSubmit = async e => {
+
+const handleSubmit = async e => {
     e.preventDefault();
-    const {emailSignInStart} = this.props
-    const {email, password} = this.state
-
+   
     emailSignInStart(email, password)
 }
 
-handleChange = e => {
+const handleChange = e => {
     const {value, name} = e.target
 
-    this.setState({[name]:value })
+    setCredentials({...userCredentials,[name]:value })
 }
 
-render() {
-    const {googleSignInStart} = this.props
 return (
  <SignInContainer>
      <SignInTitle> I already have an account</SignInTitle>
      <span> Sign in with your email and password</span>
                 
-     <form onSubmit={this.handleSubmit}>
+     <form onSubmit={handleSubmit}>
 
                 <FormInput 
                 name="email" 
                 type="email" 
-                handleChange={this.handleChange} 
-                value={this.state.email} 
+                handleChange={handleChange} 
+                value={email} 
                 label="Email" required />
               
 
                 <FormInput 
                 name="password" 
                 type="password" 
-                value={this.state.password}
-                handleChange={this.handleChange} 
+                value={password}
+                handleChange={handleChange} 
                 label="Password" 
                 required />
                
@@ -70,7 +61,6 @@ return (
  </SignInContainer>
    )
 
-}
 }
 
 const mapDipatchToProps = dispatch => ({    
