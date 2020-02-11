@@ -11,7 +11,8 @@ export const MenuItemContainer = styled.div`
 	justify-content: center;
 	border: 1px solid black;
 	margin: 0 7.5px 15px;
-	overflow: hidden;
+  overflow: hidden;
+  
 	&:hover {
 		cursor: pointer;
 		& .background-image {
@@ -36,7 +37,7 @@ export const BackgroundImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
- 
+ box-shadow: 5px 5px 2px rgb(36, 32, 32);
 `;
 
 export const ContentContainer = styled.div`
