@@ -8,7 +8,7 @@ import FormInput from '../form-input/form-input.component'
 import {SignInContainer, SignInTitle, ButtonsBarContainer} from './sign-in.styles'
 import {googleSignInStart, emailSignInStart} from '../../redux/user/user.actions'
 
-const SignIn =(emailSignInStart,googleSignInStart) => {
+const SignIn =({emailSignInStart,googleSignInStart}) => {
     const [userCredentials, setCredentials ] = useState ({email:'', password:'' })
     const {email, password} = userCredentials
 
@@ -28,8 +28,8 @@ const handleChange = e => {
 
 return (
  <SignInContainer>
-     <SignInTitle> I already have an account</SignInTitle>
-     <span> Sign in with your email and password</span>
+     <SignInTitle> Membre </SignInTitle>
+     <span> Entrer vos informations </span>
                 
      <form onSubmit={handleSubmit}>
 
@@ -50,7 +50,7 @@ return (
                 required />
                
        <ButtonsBarContainer>
-                <CustomButton type="submit" > Sign In </CustomButton>
+                <CustomButton type="submit" > Entrer </CustomButton>
                 <CustomButton 
                 type='button'
                 onClick={googleSignInStart} 

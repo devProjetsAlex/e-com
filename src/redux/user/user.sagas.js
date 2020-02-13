@@ -40,7 +40,6 @@ export function* signInWithGoogle() {
     yield put(signInFailure(error));
   }
 }
-
 export function* signInWithEmail({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
