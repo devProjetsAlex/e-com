@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const SignInContainer = styled.div`
   width: 380px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
+  @media screen and (max-width: 800px) {
+  position:absolute;
+  margin-top:0px;
 `;
 
 export const SignInTitle = styled.h2`

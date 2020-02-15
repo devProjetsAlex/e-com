@@ -1,18 +1,17 @@
-  
 import styled from 'styled-components';
 
 export const MenuItemContainer = styled.div`
-	height: ${({ size }) => (size ? '380px' : '240px')}  
-  width: 30%;
+	height: ${({ size }) => (size ? '380px' : '240px')}
+	min-width: 30%;
 	overflow: hidden;
-  flex: 1 1 auto;
-  display: flex;
+	flex: 1 1 auto;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	border: 1px solid black;
 	margin: 0 7.5px 15px;
   overflow: hidden;
-  
+  box-shadow: 5px 5px 2px rgb(36, 32, 32);
 	&:hover {
 		cursor: pointer;
 		& .background-image {
@@ -29,15 +28,19 @@ export const MenuItemContainer = styled.div`
   &:last-child {
     margin-left: 7.5px;
   }
+  @media screen and (max-width: 800px) {
+    height: 200px;
+    width: 200px;
+  }
 `;
 
 export const BackgroundImageContainer = styled.div`
   width: 100%;
-  height:100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
- box-shadow: 5px 5px 2px rgb(36, 32, 32);
+  
 `;
 
 export const ContentContainer = styled.div`
@@ -51,6 +54,7 @@ export const ContentContainer = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
+  
 `;
 
 export const ContentTitle = styled.span`

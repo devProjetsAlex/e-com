@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import CustomButton from '../custom-button/custom-button.component'
+import styled from 'styled-components';
+import CustomButton from '../custom-button/custom-button.component';
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;
@@ -8,6 +8,7 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  
   &:hover {
     .image {
       opacity: 0.8;
@@ -17,15 +18,33 @@ export const CollectionItemContainer = styled.div`
       display: flex;
     }
   }
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      button {
+        opacity: unset;
+      }
+    }
+  }
 `;
 
 export const AddButton = styled(CustomButton)`
-    width: 80%;
-    opacity: 0.7;
-    position: absolute;
-    top: 225px;
-    display: none;
-`
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+  top: 255px;
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+    font-size:12px;
+  }
+`;
 
 export const BackgroundImage = styled.div`
   width: 100%;
@@ -34,26 +53,26 @@ export const BackgroundImage = styled.div`
   background-position: center;
   margin-bottom: 5px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-  border-style: solid;
-     border-color: transparent black rgb(212, 201, 201);
-    margin: 6px 6px 30px ;
-    overflow: hidden;
-    box-shadow: 5px 5px 2px rgb(36, 32, 32);
+  box-shadow: 5px 5px 2px rgb(36, 32, 32);
+  @media screen and (max-width: 800px) {
+    box-shadow: 0px 0px 1px rgb(36, 32, 32);
+  }
 `;
 
 export const CollectionFooterContainer = styled.div`
-width: 100%;
-height: 5%;
-display: flex;
-justify-content: space-between;
-font-size: 28px;
-`
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+`;
 
 export const NameContainer = styled.span`
-width: 90%;
-margin-bottom: 10px;
-`
+  width: 90%;
+  margin-bottom: 15px;
+`;
+
 export const PriceContainer = styled.span`
-    width:10%;
-    text-allign: right;
-`
+  width: 10%;
+  text-align: right;
+`;
