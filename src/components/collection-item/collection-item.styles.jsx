@@ -19,7 +19,8 @@ export const CollectionItemContainer = styled.div`
     }
   }
   @media screen and (max-width: 800px) {
-    width: 40vw;
+    width:40vw;
+    
     &:hover {
       .image {
         opacity: unset;
@@ -55,8 +56,10 @@ export const BackgroundImage = styled.div`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   box-shadow: 5px 5px 2px rgb(36, 32, 32);
   @media screen and (max-width: 800px) {
-    box-shadow: 0px 0px 1px rgb(36, 32, 32);
-  }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }   
 `;
 
 export const CollectionFooterContainer = styled.div`

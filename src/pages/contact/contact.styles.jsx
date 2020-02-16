@@ -9,10 +9,10 @@ export const ContactForm = styled.div`
 `
 
 export const TextDisclamer = styled.div`
-text-align: center;
+    text-align: center;
     font-family: 'Slabo 27px'; 
     font-size: 27px;
-    color:#7FFF00;
+    color:#003300;
 `
 
 
