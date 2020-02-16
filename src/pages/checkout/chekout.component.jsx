@@ -55,7 +55,7 @@ const CheckoutPage =({cartItems, total}) => (
     <TotalContainer>
             <span> TOTAL: ${total}</span>
             <WarningContainer>
-            *NO BACK-END PAYMENT POSSIBLE **DEMONSTRATION ONLY <br/> USE CC: 4242 4242 4242 4242 - Exp:01/20 - CVV: 123 <br/> Thank you,Alex C. Merci!
+            *NO BACK-END PAYMENT POSSIBLE **DEMONSTRATION ONLY <br/> USE CC: 4242 4242 4242 4242 - Exp:01/23 - CVV: 123 <br/> Thank you,Alex C. Merci!
             </WarningContainer>
     </TotalContainer>   
 
