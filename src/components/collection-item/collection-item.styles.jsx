@@ -73,6 +73,10 @@ export const CollectionFooterContainer = styled.div`
 export const NameContainer = styled.span`
   width: 90%;
   margin-bottom: 15px;
+  font-size: 28px;
+  @media screen and (max-width: 800px) {
+    font-size:18px;
+  }
 `;
 
 export const PriceContainer = styled.span`
