@@ -2,7 +2,9 @@
   "name": "e-commerce",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://localhost:5000",
   "dependencies": {
+    "axios": "^0.19.2",
     "firebase": "6.0.2",
     "node-sass": "^4.13.1",
     "react": "^16.8.6",
