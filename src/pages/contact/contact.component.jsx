@@ -13,7 +13,7 @@ const ContactPage = () =>(
         Web developper for small business <br/>
         Developpeur de projet Web pour PME
             <br/>
-     <Email> <a style={{color:"#DAA520"}} href={`mailto:${"dev.projets.alex@gmail.com"}`}>dev.projets.alex@gmail.com</a></Email>
+     <Email> <a style={{color:"#e65c00"}} href={`mailto:${"dev.projets.alex@gmail.com"}`}>dev.projets.alex@gmail.com</a></Email>
      </ContactText>
      <h1> Projet développé sur Chrome</h1>
     <p style={{color:"#b30000"}}>Project dependencies : <br/> Redux v.4.0.1 <br/> Redux-Saga v.1.1.3 <br/> Redux-thunk v.2.3.0<br/>Redux-Persist v.5.10.0<br/>Redux-Logger v.3.0.6<br/>   Reselect v.4.0.0<br/> React-Router-Dom v.5.0.0 <br/> React-Stripe-Checkout v.2.6.3<br/> Node-Sass v.4.13.1 <br/> Firebase v.6.0.2 <br/> Styled-Component v4.2.0  </p>

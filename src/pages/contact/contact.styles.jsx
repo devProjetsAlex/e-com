@@ -24,5 +24,6 @@ color:#8B008B
 export const Email = styled.div`
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
        text-align:center;
+       color:#e65c00;
               
 `
