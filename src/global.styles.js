@@ -2,7 +2,7 @@ import {createGlobalStyle} from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 body {
-    font-family: 'Bangers';
+    font-family: 'Teko';
     padding: 20px 40px;
  
     
